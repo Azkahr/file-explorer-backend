@@ -1,13 +1,10 @@
 import { Elysia } from "elysia";
-import { buildFolderTree, createFolder, deleteFolder, getDirectChildren, renameFolder, searchFolders } from "./service";
+import { buildFolderTree, createFolder, deleteFolder, renameFolder, searchFolders } from "./service";
 import { deleteInput, folderInput, renameInput } from "./model";
 
 export const folderModule = new Elysia({ prefix: '/v1/folders' })
     .get('/tree', async() => {
         return await buildFolderTree()
-    })
-    .get('/:id/children', async({ params }) => {
-        return await getDirectChildren(Number(params.id))
     })
     .get('/search/:query', async({ params }) => {
         return await searchFolders(params.query)

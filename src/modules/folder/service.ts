@@ -1,7 +1,7 @@
 import { eq, inArray, like } from "drizzle-orm"
 import { db, folders } from "../../db"
 import { Folder, FolderInput } from "./model"
-import { getAllFolders, getChildrenOfFolder, getFolderById } from "./repository"
+import { getAllFolders, getFolderById } from "./repository"
 
 export const buildFolderTree = async (): Promise<Folder[]> => {
   const flat = await getAllFolders()
@@ -23,10 +23,6 @@ export const buildFolderTree = async (): Promise<Folder[]> => {
   }
 
   return roots
-}
-
-export const getDirectChildren = async (id: number) => {
-  return await getChildrenOfFolder(id)
 }
 
 export const createFolder = async (data: FolderInput) => {

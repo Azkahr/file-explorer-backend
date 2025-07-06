@@ -4,9 +4,6 @@ import { FolderInput } from "./model";
 
 export const getAllFolders = () => db.select().from(folders).orderBy(asc(folders.name))
 
-export const getChildrenOfFolder = (parentId: number) => 
-    db.select().from(folders).where(eq(folders.id, parentId))
-
 export const getFolderById = async (id: number) => {
   const [folder] = await db.select().from(folders).where(eq(folders.id, id));
   return folder;
