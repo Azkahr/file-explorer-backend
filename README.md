@@ -1,15 +1,23 @@
-# Elysia with Bun runtime
+# 📁 Test Project File Explorer Backend (Elysia + Bun)
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
+This is the backend API for the File Explorer project, built with [Elysia.js](https://elysiajs.com/) and powered by [Bun](https://bun.sh/). It supports folder creation, renaming, deletion, and nested hierarchy using a relational database (e.g. MySQL).
 
-## Development
-To start the development server run:
+---
+
+## 🚀 Getting Started
+
+### 📦 Requirements
+
+- [Bun](https://bun.sh/) v1.0+
+- MySQL
+- Copy paste/rename `.env.example` to `.env` then adjust according your local environment
+
+---
+
+## 🛠️ Development Setup
+
+Clone the repo and install dependencies:
+
 ```bash
+bun install
 bun run dev
-```
-
-Open http://localhost:3000/ with your browser to see the result.
